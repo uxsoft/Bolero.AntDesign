@@ -10,6 +10,7 @@ open Bolero.Remoting.Server
 open Bolero.Server
 open Bolero.AntDesign.Example
 open Bolero.Templating.Server
+open Microsoft.Extensions.DependencyInjection
 
 type Startup() =
 
@@ -24,6 +25,7 @@ type Startup() =
                 .AddCookie()
                 .Services
             .AddRemoting<BookService>()
+            .AddAntDesign()
             .AddBoleroHost()
 #if DEBUG
             .AddHotReload(templateDir = __SOURCE_DIRECTORY__ + "/../Bolero.AntDesign.Example.Client")

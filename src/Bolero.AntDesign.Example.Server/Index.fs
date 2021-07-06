@@ -13,6 +13,9 @@ let page = doctypeHtml [] [
         ``base`` [attr.href "/"]
         link [attr.rel "stylesheet"; attr.href "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"]
         link [attr.rel "stylesheet"; attr.href "css/index.css"]
+        link [attr.href "_content/AntDesign/css/ant-design-blazor.css"; attr.rel "stylesheet" ]
+        script [attr.src "_content/AntDesign/js/ant-design-blazor.js"] []
+        
     ]
     body [] [
         nav [attr.classes ["navbar"; "is-dark"]; "role" => "navigation"; attr.aria "label" "main navigation"] [

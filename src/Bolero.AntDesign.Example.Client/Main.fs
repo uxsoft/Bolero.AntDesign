@@ -7,6 +7,7 @@ open Bolero.Html
 open Bolero.Remoting
 open Bolero.Remoting.Client
 open Bolero.Templating.Client
+open Bolero.AntDesign.DSL
 
 /// Routing endpoints definition.
 type Page =
@@ -142,7 +143,17 @@ let router = Router.infer SetPage (fun model -> model.page)
 type Main = Template<"wwwroot/main.html">
 
 let homePage model dispatch =
-    Main.Home().Elt()
+    div [] [
+//        comp<AntDesign.Button> [
+//            attr.style ""
+//        ] [
+//            text "Button Text"
+//        ]
+        button {
+            danger
+            "Button Text"
+        }
+    ]
 
 let counterPage model dispatch =
     Main.Counter()
